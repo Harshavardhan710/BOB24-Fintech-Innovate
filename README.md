@@ -1,7 +1,7 @@
 # BOB-AI-customer-service
 
 
-# Project Setup Guide
+## Project Setup Guide
 
 ## Overview
 
