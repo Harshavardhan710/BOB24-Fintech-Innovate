@@ -1,2 +1,1 @@
-# BOB24-Fintech-Innovate
-Team Fintech Innovate
+# BOB-AI-customer-service

@@ -1,13 +1,13 @@
 import os
 from openai import AzureOpenAI
 from dotenv import load_dotenv
-
+from .config import AZURE_OPENAI_ENDPOINT,AZURE_OPENAI_API_KEY,AZURE_OPENAI_MODEL
 # Load environment variables from .env file
 load_dotenv()
 
-azure_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')
-api_key = os.getenv('AZURE_OPENAI_API_KEY')
-model_name = os.getenv('AZURE_OPENAI_MODEL')
+azure_endpoint = AZURE_OPENAI_ENDPOINT
+api_key = AZURE_OPENAI_API_KEY
+model_name = AZURE_OPENAI_MODEL
 
 
 client = AzureOpenAI(
@@ -22,10 +22,7 @@ def generate_description(input_text,location):
         messages=[
             {
                 "role": "system",
-                "content": f"You are a customer support agent for Bank of Baroda whose primary goal is to help users "
-                           f"with issues or queries they have about the bank's services. You are friendly and "
-                           f"concise. You only provide factual answers to queries related to Bank of Baroda's "
-                           f"services. This is service number:1800 5700"
+                "content": f"You are a customer support agent for Bank of Baroda whose primary goal is to help users with issues or queries they have about the bank's services. You are friendly and concise. You only provide factual answers to queries related to Bank of Baroda's services."
             },
             
             {
