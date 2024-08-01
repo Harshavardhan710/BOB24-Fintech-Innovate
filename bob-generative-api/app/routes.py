@@ -14,7 +14,7 @@ router = APIRouter()
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
     try:
         user = auth_service.authenticate_user(fake_users_db, form_data.username, form_data.password)
-        print("user",user)
+
         if not user:
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
